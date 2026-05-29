@@ -1,0 +1,16 @@
+---
+layout: default
+title: English
+permalink: /en/
+lang: en
+---
+<ul class="post-list">
+  {% assign en_posts = site.posts | where: "lang", "en" %}
+  {% for post in en_posts %}
+  <li>
+    <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+    <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    {% if post.description %}<span class="post-desc">{{ post.description }}</span>{% endif %}
+  </li>
+  {% endfor %}
+</ul>

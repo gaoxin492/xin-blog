@@ -1,0 +1,30 @@
+# --- Site settings ---
+title: "Xin's Blog"
+description: "Notes on SLAM, 3D vision, and learning."
+author: Xin
+email: your_email@example.com
+
+# Your GitHub Pages URL. For a user/org site (username.github.io),
+# leave baseurl empty. For a project site, set baseurl: "/repo-name".
+url: "https://gaoxin492.github.io"
+baseurl: "/xin-blog"
+
+# Social links shown in the footer (leave blank to hide)
+github_username: gaoxin492
+twitter_username: ""
+
+# --- Build settings ---
+markdown: kramdown
+highlighter: rouge
+permalink: /:year/:month/:day/:title/
+
+kramdown:
+  math_engine: mathjax
+  syntax_highlighter: rouge
+
+# Files Jekyll should ignore
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor

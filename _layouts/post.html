@@ -1,0 +1,22 @@
+---
+layout: default
+---
+<article class="post">
+  <div class="lang-toggle">
+    {% assign siblings = site.posts | where: "ref", page.ref %}
+    {% if page.lang == 'en' %}
+      <span class="lang-current">English</span>
+      {% for p in siblings %}{% if p.lang == 'zh' %} · <a href="{{ p.url | relative_url }}">中文</a>{% endif %}{% endfor %}
+    {% else %}
+      <span class="lang-current">中文</span>
+      {% for p in siblings %}{% if p.lang == 'en' %} · <a href="{{ p.url | relative_url }}">English</a>{% endif %}{% endfor %}
+    {% endif %}
+  </div>
+  <h1 class="post-title">{{ page.title }}</h1>
+  <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}</p>
+  <div class="post-body">
+    {{ content }}
+  </div>
+</article>
+
+<p class="back"><a href="{% if page.lang == 'en' %}{{ '/en/' | relative_url }}{% else %}{{ '/' | relative_url }}{% endif %}">← {% if page.lang == 'en' %}all posts{% else %}全部文章{% endif %}</a></p>
